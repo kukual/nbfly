@@ -1,0 +1,176 @@
+# Hexo 配置
+## 文档: https://hexo.io/docs/configuration.html
+## 源码: https://github.com/hexojs/hexo/
+
+# ========================
+# 网站信息配置
+# ========================
+title: kukualのblog  # 网站标题
+subtitle: '「酷库阿洛」的网络安全研习录' # 网站副标题
+description: '专注于网络安全技术研究 | 渗透测试实战案例 | CTF竞赛解析 | 漏洞复现分析'  # 网站描述，用于SEO
+keywords:  # 网站关键词，用于SEO
+  - 网络安全
+  - 渗透测试
+  - CTF竞赛
+  - 漏洞分析
+  - 红队技术
+  - 安全开发
+  - 代码审计
+  - 逆向工程
+  - 二进制分析
+  - 漏洞复现
+  - 安全工具
+  - 安全策略
+  - 网络防御
+  - 网络安全
+  - 信息安全
+author: kukual  # 作者名称
+language: zh-CN # 网站语言
+timezone: ''  # 时区，默认使用电脑的时区
+
+# ========================
+# Live2D看板娘配置
+# ========================
+live2d:
+  enable: true
+
+
+# ========================
+# URL 配置
+# ========================‘
+## 设置你的网站URL。例如使用GitHub Page时，设置为'https://用户名.github.io/项目名'
+url: https://kukual.github.io/  # 网站主URL
+# permalink: :year/:month/:day/:title/  # 文章永久链接格式
+# 固定链接
+permalink: posts/:abbrlink/
+abbrlink:
+  alg: crc32 # 算法可选 crc16（默认）或 crc32
+  rep: hex # 进制可选 dec（默认）或 hex
+# nofollow 外链
+nofollow:
+  enable: true
+# 站点地图
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+# 百度链接提交
+baidu_url_submit:
+  count: 5
+  host: https://kukual.github.io
+  token: your_token # 从百度站长平台获取
+# SEO 自动元数据 
+seo:
+  enable: true
+  meta: true       # 自动生成 meta 标签
+  sitemap: true    # 增强站点地图
+permalink_defaults:  # 永久链接中各部分的默认值
+pretty_urls:  # 美化URL设置
+  trailing_index: true # 设置为false时移除永久链接末尾的'index.html'
+  trailing_html: true # 设置为false时移除永久链接末尾的'.html'
+
+# ========================
+# 目录结构配置
+# ========================
+source_dir: source  # 源文件目录
+public_dir: public  # 静态文件生成目录
+tag_dir: tags  # 标签目录
+archive_dir: archives  # 归档目录
+category_dir: categories  # 分类目录
+code_dir: downloads/code  # 代码目录
+i18n_dir: :lang  # 国际化目录
+skip_render:  # 跳过指定文件的渲染
+
+# ========================
+# 文章写作配置
+# ========================
+new_post_name: :title.md # 新文章文件名格式
+default_layout: post  # 默认布局
+titlecase: false # 是否将标题转换为首字母大写
+external_link:  # 外部链接设置
+  enable: true # 是否在新标签页打开外部链接
+  field: site # 应用范围（整个站点）
+  exclude: ''  # 排除的域名
+filename_case: 0  # 文件名转换（0=不转换，1=小写，2=大写）
+render_drafts: false  # 是否渲染草稿
+post_asset_folder: false  # 是否启用文章资源文件夹
+relative_link: false  # 是否使用相对链接
+future: true  # 是否显示未来的文章
+
+# ========================
+# 代码高亮配置
+# ========================
+syntax_highlighter: highlight.js  # 代码高亮引擎
+highlight:  # highlight.js设置
+  line_number: true  # 显示行号
+  auto_detect: false  # 自动检测语言
+  tab_replace: ''  # 替换tab的字符串
+  wrap: true  # 是否换行
+  hljs: false  # 是否使用hljs类
+prismjs:  # prism.js设置
+  preprocess: true  # 预处理
+  line_number: true  # 显示行号
+  tab_replace: ''  # 替换tab的字符串
+
+# ========================
+# 首页生成器配置
+# ========================
+index_generator:
+  path: ''  # 博客索引页的根路径
+  per_page: 6  # 每页显示文章数（0=禁用分页）
+  order_by: -date  # 文章排序（默认按日期降序）
+
+
+# ========================
+# 分类与标签配置
+# ========================
+default_category: uncategorized  # 默认分类
+category_map:  # 分类别名
+tag_map:  # 标签别名
+
+# ========================
+# SEO优化配置
+# ========================
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true  # 是否生成meta generator标签
+
+# ========================
+# 日期时间格式
+# ========================
+## Hexo使用Moment.js解析和显示日期
+## 自定义格式参考：http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD  # 日期格式
+time_format: HH:mm:ss  # 时间格式
+## updated_option可选值：'mtime'(文件修改时间), 'date'(文章日期), 'empty'(不更新)
+updated_option: 'mtime'  # 文章更新时间选项
+
+# ========================
+# 分页配置
+# ========================
+per_page: 6  # 每页显示文章数（0=禁用分页）
+pagination_dir: page  # 分页目录
+
+# ========================
+# 文件包含/排除配置
+# ========================
+## include/exclude选项仅适用于'source/'目录
+include:  # 强制包含指定文件
+exclude:  # 排除指定文件
+ignore:  # 忽略指定文件
+
+# ========================
+# 主题与扩展配置
+# ========================
+## 插件: https://hexo.io/plugins/
+## 主题: https://hexo.io/themes/
+theme: butterfly  # 当前主题名称
+
+# ========================
+# 自动化部署配置
+# ========================
+## 文档: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git  # 部署类型（支持Git/GitHub Pages等）
+  repository: git@github.com:kukual/kukual.github.io.git  # Git仓库地址（SSH格式）
+  branch: main  # 部署分支（GitHub默认主分支现为main）
+
